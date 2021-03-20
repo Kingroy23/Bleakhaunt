@@ -41,7 +41,7 @@ public class damagable : MonoBehaviour
                 timer = -21f;
             }
         }
-        /*if (hitpoints <= 0)
+        if (hitpoints <= 0)
         {
             if (isPlayer)
             {
@@ -53,6 +53,6 @@ public class damagable : MonoBehaviour
                 Destroy(gameObject);
             }
 
-        }*/
+        }
     }
 }
