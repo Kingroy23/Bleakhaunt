@@ -4061,7 +4061,7 @@ GameObject:
   - component: {fileID: 1403837702}
   - component: {fileID: 1403837701}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Ghoul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4093,6 +4093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8381ea7ad838da646bf49fb77c320ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingPosition: {x: 0, y: 0, z: 0}
 --- !u!212 &1403837702
 SpriteRenderer:
   m_ObjectHideFlags: 0
