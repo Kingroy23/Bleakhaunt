@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private bool is_on_ground;
 
+    public Animator animator;
+
     
 
 
@@ -29,12 +31,15 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 movement = new Vector2(x_movement, 0);
             rb.AddForce(movement_scalar * movement);
+
+            animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
         }
 
         if (Input.GetButtonDown("Jump") && is_on_ground)
         {
             Vector2 jump_force = new Vector2(0, jump_scalar);
             rb.AddForce(jump_force);
+            animator.SetBool("IsJumping", true);
         }
 
     }
@@ -44,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
         if (CollisionIsWithGround(collision))
         {
             is_on_ground = true;
+            animator.SetBool("IsJumping", false);
         }
     }
 

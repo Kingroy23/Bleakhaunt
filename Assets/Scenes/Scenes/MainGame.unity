@@ -2100,6 +2100,7 @@ GameObject:
   - component: {fileID: 967090165}
   - component: {fileID: 967090166}
   - component: {fileID: 967090167}
+  - component: {fileID: 967090168}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2234,6 +2235,7 @@ MonoBehaviour:
   movement_scalar: 10
   jump_scalar: 360
   max_speed: 2
+  animator: {fileID: 967090168}
 --- !u!114 &967090166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2261,6 +2263,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SceneToLoad: GameOver
+--- !u!95 &967090168
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967090160}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 11871f8f03ca1004dbb4d7d123002987, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &981107457
 GameObject:
   m_ObjectHideFlags: 0
