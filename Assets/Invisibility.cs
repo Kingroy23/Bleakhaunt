@@ -9,6 +9,14 @@ public class Invisibility : MonoBehaviour
     SpriteRenderer spriteRenderer;
     public damagable D;
 
+    public int corruption = 0;
+
+    int frameCounter = 0;
+
+    public int corruptionThreshold = 119;
+
+    float timer = -21f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +30,15 @@ public class Invisibility : MonoBehaviour
         {
             spriteRenderer.color = Color.gray;
             isInvisible = true;
+
+            frameCounter++;
+
+            if (frameCounter > corruptionThreshold)
+            {
+                corruption++;
+                frameCounter = 0;
+            }
+            
         }
         else
         {
@@ -38,4 +55,6 @@ public class Invisibility : MonoBehaviour
     {
         return isInvisible;
     }
+
+    
 }
