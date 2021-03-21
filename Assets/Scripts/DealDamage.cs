@@ -17,12 +17,6 @@ public class DealDamage : MonoBehaviour
             }
         }
 
-        /*PlayerMovement motion = collision.gameObject.GetComponent<PlayerMovement>();
-        if (motion != null)
-        {
-            Vector2 bounceDirection = collision.relativeVelocity;
-            motion.movement = bounceDirection.normalized * -10f;
-
-        }*/
+      
     }
 }
