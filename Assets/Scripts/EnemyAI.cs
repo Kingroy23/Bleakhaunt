@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
 
     public Transform target;
 
+    public Invisibility playerInvisibility;
+
     public float speed = 200f;
     public float nextWaypointDistance = 3f;
 
@@ -53,41 +55,49 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (path == null)
+
+        if (playerInvisibility.returnInvisibility() != true)
         {
-            return;
-        }
+            if (path == null)
+            {
+                return;
+            }
 
-        if(currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndofPath = true;
-            return;
-        }
-        else
-        {
-            reachedEndofPath = false;
-        }
+            if (currentWaypoint >= path.vectorPath.Count)
+            {
+                reachedEndofPath = true;
+                return;
+            }
+            else
+            {
+                reachedEndofPath = false;
+            }
 
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
 
-        Vector2 force = direction * speed * Time.deltaTime;
+            //Debug.Log("direction:" +direction);
 
-        rb.AddForce(force);
+            Vector2 force = direction * speed * Time.deltaTime;
 
-        float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
+            rb.AddForce(force);
 
-        if (distance < nextWaypointDistance)
-        {
-            currentWaypoint++;
-        }
+            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
-        if(force.x >= 0.01f)
-        {
-            enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
-        }
-        else if (force.x <= -0.01f)
-        {
-            enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            if (distance < nextWaypointDistance)
+            {
+                currentWaypoint++;
+            }
+
+            if (force.x >= 0.01f)
+            {
+                enemyGFX.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            else if (force.x <= -0.01f)
+            {
+                enemyGFX.localScale = new Vector3(1f, 1f, 1f);
+            }
         }
     }
+
+
 }

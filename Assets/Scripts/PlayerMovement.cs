@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float max_speed;
     private Rigidbody2D rb;
     private bool is_on_ground;
-
+    public Transform t1;
     public Animator animator;
 
     
@@ -33,6 +33,15 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(movement_scalar * movement);
 
             animator.SetFloat("Speed", Mathf.Abs(rb.velocity.magnitude));
+
+            if (movement.x < 0.0f)
+            {
+                t1.localScale = new Vector3(-1f, 1f, 1f);
+            }
+            else if (movement.x >= 0.0f)
+            {
+                t1.localScale = new Vector3(1f, 1f, 1f);
+            }
         }
 
         if (Input.GetButtonDown("Jump") && is_on_ground)

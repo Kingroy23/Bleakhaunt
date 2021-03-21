@@ -10,6 +10,7 @@ public class damagable : MonoBehaviour
     SpriteRenderer spriteRenderer;
 
     float timer = -21f;
+    public bool isDamaged = false;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class damagable : MonoBehaviour
         hitpoints -= amount;
         timer = .8f;
         spriteRenderer.color = Color.red;
+        isDamaged = true;
         Debug.Log("took " + amount + "damage, hp is " + hitpoints);
     }
     //I need to continuously check if I have any health points
@@ -38,6 +40,7 @@ public class damagable : MonoBehaviour
             if (timer <= 0f)
             {
                 spriteRenderer.color = Color.white;
+                isDamaged = false;
                 timer = -21f;
             }
         }

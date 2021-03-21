@@ -7,6 +7,7 @@ public class Invisibility : MonoBehaviour
 
     public bool isInvisible = false;
     SpriteRenderer spriteRenderer;
+    public damagable D;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +21,21 @@ public class Invisibility : MonoBehaviour
         if (Input.GetButton("Invisible"))
         {
             spriteRenderer.color = Color.gray;
+            isInvisible = true;
         }
         else
         {
-            spriteRenderer.color = Color.white;
+            if (D.isDamaged != true)
+            {
+                spriteRenderer.color = Color.white;
+                isInvisible = false;
+            }
+            
         }
+    }
+
+    public bool returnInvisibility()
+    {
+        return isInvisible;
     }
 }
