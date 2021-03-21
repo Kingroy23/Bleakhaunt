@@ -2469,6 +2469,7 @@ GameObject:
   - component: {fileID: 1195533278}
   - component: {fileID: 1195533277}
   - component: {fileID: 1195533276}
+  - component: {fileID: 1195533280}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2504,7 +2505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 967090162}
-  speed: 4
+  speed: 40
   nextWaypointDistance: 3
   enemyGFX: {fileID: 1818423031}
 --- !u!50 &1195533277
@@ -2572,6 +2573,19 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &1195533280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195533274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99198a4fa3c2a194ba61c99972227bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Attack: 1
 --- !u!1 &1224508785
 GameObject:
   m_ObjectHideFlags: 0
@@ -4405,7 +4419,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1818423031}
   - component: {fileID: 1818423033}
-  - component: {fileID: 1818423032}
   m_Layer: 0
   m_Name: Ghoul
   m_TagString: Untagged
@@ -4427,22 +4440,6 @@ Transform:
   m_Father: {fileID: 1195533275}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!70 &1818423032
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818423030}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.13091278}
-  m_Size: {x: 0.76, y: 0.84}
-  m_Direction: 0
 --- !u!212 &1818423033
 SpriteRenderer:
   m_ObjectHideFlags: 0
